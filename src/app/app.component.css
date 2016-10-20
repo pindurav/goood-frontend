@@ -5,6 +5,18 @@
         background: #ccc;
         z-index: 10;
     }
+    .slogan
+    {
+      position: fixed;
+        z-index: 10;
+
+      background: #fff;
+      opacity: .8;
+
+          top: 80%;
+    left: 20%;
+      height: 20ex;
+    }
 
     body {
        margin: 0;
@@ -35,7 +47,7 @@
     }
     .boxInner .titleBox {
         visibility: hidden;
-       
+
        position: absolute;
        bottom: 0;
        left: 0;
@@ -89,4 +101,3 @@
           padding-bottom: 5%;
        }
     }
-    

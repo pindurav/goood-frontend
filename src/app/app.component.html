@@ -16,23 +16,36 @@
 
   <body class="no-touch">
 
-      <div class=fixed>
-        {{loadingInProgress}}
-        <button (click)=switchLoading()>
+    <div class=fixed>
+      {{loadingInProgress}}
+      <button (click)=startLoading()>
           <span *ngIf="loadingInProgress">Stop</span>
           <span *ngIf="!loadingInProgress">Run</span>
         </button>
-        {{already_loaded_count}} / <input type="text" type="number" [(ngModel)]="total_items" />
-      </div>
+      <!--<button (click)=removeNotVisibleElement()>Remove</button>-->
+      {{already_loaded_count}} / <input type="text" type="number" [(ngModel)]="total_items" />
+    </div>
+
+    <div class='fixed slogan'>
+      <h2>We are looking for 50 000 Goood people who wants to be part of creating first be-goood platform</h2>
+      <ol>
+        <li>We are looking for 50 000 Goood people who wants to be part of creating first be-goood platform</li>
+        <li>We are looking for 50 000 Goood people who wants to be part of creating first be-goood platform</li>
+      </ol>
+      <a>SUPPORT</a>
+    </div>
 
     <div class="wrap">
 
       <!-- Define all of the tiles: -->
-      <div class="box" *ngFor="let item of items">
+      <div class="box" *ngFor="let item of items;  let i = index; ">
+        <!--jen pokus s celkovyma poctama polozek-->
+        <!--<div class="boxInner" *ngIf="i < total_items">-->
         <div class="boxInner">
-          <!--stridani obrayku-->
-          <img *ngIf="item % 2 == 0" src="https://scontent.xx.fbcdn.net/v/t1.0-1/14656381_130974024034347_773749274456332164_n.jpg?oh=ca584877c5b109a26ec3873e821da92e&oe=586232F8" />
-          <img *ngIf="item % 2 == 1" src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/1.jpg" />
+          <img *ngIf="i % 2 == 0" src="https://scontent.xx.fbcdn.net/v/t1.0-1/14656381_130974024034347_773749274456332164_n.jpg?oh=ca584877c5b109a26ec3873e821da92e&oe=586232F8"
+          />
+          <img *ngIf="i % 2 == 1" src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/1.jpg"
+          />
           <div class="titleBox">{{item}}</div>
         </div>
       </div>
