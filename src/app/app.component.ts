@@ -16,6 +16,8 @@ export class AppComponent {
   already_loaded_count = 0;
   loadingInProgress = true;
 
+  isFaceVisible = false;
+
   constructor() {
     this.loadingInProgress = false; //'kliknuti na loadMore'
 
@@ -32,7 +34,7 @@ export class AppComponent {
       map((se: any) => {
         console.log(se);
         return {
-          // momentalne nejede..
+          // todo: momentalne nejede..
           scrollTop: se.target.scrollTop,
           scrollHeight: se.target.scrollHeight,
           clientHeight: se.target.clientHeight
@@ -42,7 +44,7 @@ export class AppComponent {
     // filter((x) => x.clientHeight === x.scrollHeight - x.scrollTop);
 
     scrolling.subscribe(x => {
-      console.log(`scroll sucess ${x.scrollHeight}`);
+      console.log(`scroll sucess ${x.scrollHeight}`); // todo: pozor tady je chyba, nevraci to vysku/sirku
       this.total_items += 5;
       this.startLoading();
     });
@@ -54,6 +56,11 @@ export class AppComponent {
         $(this).remove();
       }
     });
+  }
+
+  showHiddeFace()
+  {
+    this.isFaceVisible = !this.isFaceVisible;
   }
 
   loadData() {

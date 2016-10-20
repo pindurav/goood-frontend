@@ -24,6 +24,9 @@
         </button>
       <!--<button (click)=removeNotVisibleElement()>Remove</button>-->
       {{already_loaded_count}} / <input type="text" type="number" [(ngModel)]="total_items" />
+
+      <br>
+      <button (click)=showHiddeFace()>Face</button>
     </div>
 
     <div class='fixed slogan'>
@@ -34,6 +37,9 @@
       </ol>
       <a>SUPPORT</a>
     </div>
+
+
+    <profile-detail *ngIf="isFaceVisible"></profile-detail>
 
     <div class="wrap">
 
