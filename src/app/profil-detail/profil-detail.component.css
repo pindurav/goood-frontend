@@ -11,4 +11,12 @@ div
   margin-left: -250px; /* Negative half of width. */
 
   z-index: 1000;
+
+  padding: 5ex;
+}
+
+img
+{
+  width: 150px;
+  height: 150px;
 }

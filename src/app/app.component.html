@@ -47,7 +47,7 @@
       <div class="box" *ngFor="let item of items;  let i = index; ">
         <!--jen pokus s celkovyma poctama polozek-->
         <!--<div class="boxInner" *ngIf="i < total_items">-->
-        <div class="boxInner">
+        <div class="boxInner" (click)=showHiddeFace()>
           <img *ngIf="i % 2 == 0" src="https://scontent.xx.fbcdn.net/v/t1.0-1/14656381_130974024034347_773749274456332164_n.jpg?oh=ca584877c5b109a26ec3873e821da92e&oe=586232F8"
           />
           <img *ngIf="i % 2 == 1" src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/1.jpg"
