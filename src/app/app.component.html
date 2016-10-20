@@ -1,3 +1,46 @@
 <h1>
-  {{title}}
+  <!DOCTYPE HTML>
+  <html lang="en-US">
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Responsive Tiled Photo Gallery</title>
+
+    <!-- Enable media queries for old IE -->
+    <!--[if lt IE 9]>
+     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
+
+  </head>
+
+  <body class="no-touch">
+
+      <div class=fixed>
+        {{loadingInProgress}}
+        <button (click)=switchLoading()>
+          <span *ngIf="loadingInProgress">Stop</span>
+          <span *ngIf="!loadingInProgress">Run</span>
+        </button>
+        {{already_loaded_count}} / <input type="text" type="number" [(ngModel)]="total_items" />
+      </div>
+
+    <div class="wrap">
+
+      <!-- Define all of the tiles: -->
+      <div class="box" *ngFor="let item of items">
+        <div class="boxInner">
+          <!--stridani obrayku-->
+          <img *ngIf="item % 2 == 0" src="https://scontent.xx.fbcdn.net/v/t1.0-1/14656381_130974024034347_773749274456332164_n.jpg?oh=ca584877c5b109a26ec3873e821da92e&oe=586232F8" />
+          <img *ngIf="item % 2 == 1" src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/1.jpg" />
+          <div class="titleBox">{{item}}</div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /#wrap -->
+
+  </body>
+
+  </html>
 </h1>
