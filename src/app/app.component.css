@@ -18,6 +18,13 @@
       height: 20ex;
     }
 
+    .boxInner
+    {
+      background: #fff url('../assets/default.gif') center no-repeat;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
     body {
        margin: 0;
        padding: 0;
