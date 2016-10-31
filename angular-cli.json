@@ -18,7 +18,8 @@
         "styles.css"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.js"
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/three/build/three.min.js"
       ],
       "environments": {
         "source": "environments/environment.ts",

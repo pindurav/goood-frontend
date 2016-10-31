@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import * as Rx from 'rxjs';
-var $ = require('jquery');
+
+declare var $: any;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component-svg.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponentSvg {
 
   items: any[] = [];
 
@@ -25,12 +26,21 @@ export class AppComponent {
     this.listenScroll();
   }
 
-getPositionX(index: number)
-{
-  return (50*index);
-}
-
-  // //http://stackoverflow.com/a/33226843
+  ITEMS_PER_ROW = 20;
+  getPositionX(index: number)
+  {
+    return 50*index;
+    // var xxx = Math.max(0, this.rowIndex -1);
+    // return (50*(index - (xxx*this.ITEMS_PER_ROW)));
+  }
+  rowIndex = 0;
+  getPositionY(index: number)
+  {
+    this.rowIndex = Math.ceil((index+1) /this.ITEMS_PER_ROW);
+    return (50*this.rowIndex);
+  }
+ 
+  //http://stackoverflow.com/a/33226843
   listenScroll() {
     console.log($);
 
