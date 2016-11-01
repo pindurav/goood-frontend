@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import * as Rx from 'rxjs';
-var $ = require('jquery');
+declare var $: any;
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component-svg.html',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
@@ -24,11 +24,6 @@ export class AppComponent {
     this.startLoading();
     this.listenScroll();
   }
-
-getPositionX(index: number)
-{
-  return (50*index);
-}
 
   // //http://stackoverflow.com/a/33226843
   listenScroll() {
@@ -63,8 +58,7 @@ getPositionX(index: number)
     });
   }
 
-  showHiddeFace()
-  {
+  showHiddeFace() {
     this.isFaceVisible = !this.isFaceVisible;
   }
 

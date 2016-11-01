@@ -10,7 +10,7 @@ import { ProfileDetailComponent } from './profil-detail/profil-detail.component'
 
 @NgModule({
   declarations: [
-    AppComponentSvg,
+    AppComponent,
     ProfileDetailComponent,
     ThreeJsListComponent
   ],
@@ -20,6 +20,6 @@ import { ProfileDetailComponent } from './profil-detail/profil-detail.component'
     HttpModule
   ],
   providers: [],
-  bootstrap: [ThreeJsListComponent] // ThreeJsListComponent, AppComponent, AppComponentSvg 
+  bootstrap: [AppComponent] // ThreeJsListComponent, AppComponent, AppComponentSvg 
 })
 export class AppModule { }
